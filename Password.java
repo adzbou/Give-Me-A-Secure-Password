@@ -43,7 +43,33 @@ public class Password {
     }
 
 
-    
+    public void BuildSecurePassword(char[] lowercase_letters, char[] uppercase_letters, char[] numbers, char[] special_characters, int passwordLength){
+        Random random = new Random();
+        char [] securePassword = new char [passwordLength];
+        for (int i = 0; i < passwordLength; i++){
+            int char_type = random.nextInt(4);
+
+            switch(char_type){
+
+                case 0:
+                    securePassword[i] = lowercase_letters[random.nextInt(lowercase_letters.length)];
+                    break;
+                case 1:
+                    securePassword[i] = uppercase_letters[random.nextInt(uppercase_letters.length)];
+                    break;
+                case 2:
+                    securePassword[i] = numbers[random.nextInt(numbers.length)];
+                    break;
+                case 3:
+                    securePassword[i] = special_characters[random.nextInt(special_characters.length)];
+                    break;
+
+            }
+        }
+
+        System.out.println(securePassword);
+
+    }
 
 
     public static void main(String[] args) {
@@ -53,11 +79,13 @@ public class Password {
         char[] numbers = "0123456789".toCharArray();
         char[] special_characters = "!@#$%^&*()_+{}[]|\\;:'\",.<>?/-~`".toCharArray();
         Password mypassword = new Password();
-        for (int i = 0; i < 1000; i ++){
-            mypassword.BuildApplePassword(lowercase_letters, uppercase_letters, numbers);
+//        for (int i = 0; i < 1000; i ++){
+//            mypassword.BuildApplePassword(lowercase_letters, uppercase_letters, numbers);
+//
+//
+//        }
 
-
-        }
+        mypassword.BuildSecurePassword(lowercase_letters,uppercase_letters,numbers,special_characters, 8);
 
     }
 }
