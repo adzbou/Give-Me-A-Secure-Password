@@ -1,9 +1,11 @@
+package com.example.Password;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class Password {
+public class  Password {
 
     private char[] lowercase_letters = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     private char[] uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
