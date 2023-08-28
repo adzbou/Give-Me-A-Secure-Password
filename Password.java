@@ -25,7 +25,7 @@ public class Password {
                     break;
                 }
             }
-            while (indexOfUpperCase == indexToSwap) {
+            while (indexOfUpperCase == indexToSwap || Character.isDigit(apple_password[indexToSwap])) {
                 indexToSwap = possibleIndexes[random.nextInt(possibleIndexes.length)];
             }
             apple_password[indexToSwap] = (char) random.nextInt(10);
